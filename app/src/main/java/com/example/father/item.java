@@ -1,15 +1,20 @@
 package com.example.father;
 
 public class item {
-    String item_name;
-    Double count;
-    String unit;
-    Double unit_price;
-    Double sum;
-    public String get_name()
-    {
-        return this.item_name+","+this.count+","+this.unit+","+this.unit_price+","+this.sum+"\n";
+    String item_name;//單品名稱
+    String count;//數量
+    String unit_price;//單價
+    String unit;//單位
+    String sum;
+
+    item(String item_name, String count, String unit_price, String unit, String sum) {
+        this.item_name = item_name;
+        this.count = count;
+        this.unit_price = unit_price;
+        this.unit = unit;
+        this.sum = sum;
     }
+
     public String getItem_name() {
         return item_name;
     }
@@ -18,12 +23,20 @@ public class item {
         this.item_name = item_name;
     }
 
-    public Double getCount() {
+    public String getCount() {
         return count;
     }
 
-    public void setCount(Double count) {
+    public void setCount(String count) {
         this.count = count;
+    }
+
+    public String getUnit_price() {
+        return unit_price;
+    }
+
+    public void setUnit_price(String unit_price) {
+        this.unit_price = unit_price;
     }
 
     public String getUnit() {
@@ -34,19 +47,16 @@ public class item {
         this.unit = unit;
     }
 
-    public Double getUnit_price() {
-        return unit_price;
-    }
-
-    public void setUnit_price(Double unit_price) {
-        this.unit_price = unit_price;
-    }
-
-    public Double getSum() {
+    public String getSum() {
         return sum;
     }
 
-    public void setSum(Double sum) {
+    public void setSum(String sum) {
         this.sum = sum;
+    }
+
+    @Override
+    public String toString() {
+        return item_name + "," + count + "," + unit_price + "," + unit + "," + sum;
     }
 }
